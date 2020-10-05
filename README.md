@@ -16,8 +16,10 @@ so, cli take parameters:
 3.  **-o, --output**: an output file
 4.  **-a, --act**: an action encode/decode - required
 
-you can set shift for cipter throught parameter 'shift'
-and you can decode or encode text with parameter act
+you can set shift for cipter throught parameter "shift"
+and you can decode or encode text with parameter "act"
+
+all reult writes to te end of file "output.txt"
 
 for encoding/decoding from file in file:
 
@@ -60,7 +62,7 @@ for encoding/decoding from file in console:
 **example**
 
 ```bash
-$ node index --action encode --shift 7 --input input.txt
+$ node index --act encode --shift 7 --input input.txt
 `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
 ```
 
