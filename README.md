@@ -1,34 +1,38 @@
 # Caesar-cipher
 
-1. For using the prgramm clone repo, go to directory "caesar-cipher-cli" and istall all dependencies with command:
+For using the prgramm clone repo, go to directory "caesar-cipher-cli" and istall all dependencies with command:
 
 ```bash
 $ npm i
 ```
+additionaly you shoul have node version 12.16.2
 
-for code/decode text in file you can have files 'input.txt' and 'output.txt' in directory "caesar-cipher-cli"
+for code/decode text in file you should have files 'input.txt' and 'output.txt' in directory "caesar-cipher-cli"
 
 so, cli take parameters:
 
 1.  **-s, --shift**: a shift - required
 2.  **-i, --input**: an input file
 3.  **-o, --output**: an output file
-4.  **-a, --action**: an action encode/decode - required
+4.  **-a, --act**: an action encode/decode - required
 
-for encoding from file  in file:
+you can set shift for cipter throught parameter 'shift'
+and you can decode or encode text with parameter act
+
+for encoding/decoding from file in file:
 
 **example:**
 
 ```bash
-$ index -a encode -s 7 -i "./input.txt" -o "./output.txt"
+$ node index -a encode -s 7 -i "./input.txt" -o "./output.txt"
 ```
 
 ```bash
-$ index --action encode --shift 7 --input input.txt --output output.txt
+$ node index --act encode --shift 7 --input input.txt --output output.txt
 ```
 
 ```bash
-$ index --action decode --shift 7 --input input.txt --output output.txt
+$ node index --act decode --shift 7 --input input.txt --output output.txt
 ```
 
 > input.txt
@@ -43,7 +47,7 @@ for encoding/decoding from console in file:
 **example**
 
 ```bash
-$ index --action code --shift 7 --output output.txt
+$ node index --act encode --shift 7 --output output.txt
 This is secret. Message about "_" symbol!
 ```
 
@@ -56,11 +60,11 @@ for encoding/decoding from file in console:
 **example**
 
 ```bash
-$ index --action encode --shift 7 --input input.txt
+$ node index --action encode --shift 7 --input input.txt
 `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
 ```
 
-> iput.txt
+> input.txt
 > This is secret. Message about "_" symbol!
 
 
@@ -69,7 +73,7 @@ for instant encoding without files (throught console) do not use parameters inpu
 **example**
 
 ```bash
-$node index -s 7 --act encode
+$ node index -s 7 --act encode
 This is secret. Message about "_" symbol!
 Vjku ku ugetgv. Oguucig cdqwv "_" uaodqn!
 ```
