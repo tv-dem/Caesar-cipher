@@ -1,1 +1,81 @@
 # Caesar-cipher
+
+For using the prgramm clone repo, go to directory "caesar-cipher-cli" and istall all dependencies with command:
+
+```bash
+$ npm i
+```
+additionaly you shoul have node version 12.16.2
+
+for code/decode text in file you should have files 'input.txt' and 'output.txt' in directory "caesar-cipher-cli"
+
+so, cli take parameters:
+
+1.  **-s, --shift**: a shift - required
+2.  **-i, --input**: an input file
+3.  **-o, --output**: an output file
+4.  **-a, --act**: an action encode/decode - required
+
+you can set shift for cipter throught parameter "shift"
+and you can decode or encode text with parameter "act"
+
+all reult writes to te end of file "output.txt"
+
+for encoding/decoding from file in file:
+
+**example:**
+
+```bash
+$ node index -a encode -s 7 -i "./input.txt" -o "./output.txt"
+```
+
+```bash
+$ node index --act encode --shift 7 --input input.txt --output output.txt
+```
+
+```bash
+$ node index --act decode --shift 7 --input input.txt --output output.txt
+```
+
+> input.txt
+> `This is secret. Message about "_" symbol!`
+
+> output.txt
+> `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
+
+
+for encoding/decoding from console in file:
+
+**example**
+
+```bash
+$ node index --act encode --shift 7 --output output.txt
+This is secret. Message about "_" symbol!
+```
+
+> output.txt
+> `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
+
+
+for encoding/decoding from file in console:
+
+**example**
+
+```bash
+$ node index --act encode --shift 7 --input input.txt
+`Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
+```
+
+> input.txt
+> This is secret. Message about "_" symbol!
+
+
+for instant encoding without files (throught console) do not use parameters input and output
+
+**example**
+
+```bash
+$ node index -s 7 --act encode
+This is secret. Message about "_" symbol!
+Vjku ku ugetgv. Oguucig cdqwv "_" uaodqn!
+```
