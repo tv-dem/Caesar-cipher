@@ -7,21 +7,23 @@ const {parseAction,parseShift,parseInput,parseOutput} = require('./requires/pars
 
 const command = new Command();
 command.
-    option('-a, --act <string>' ,'code/decode', parseAction).
+    storeOptionsAsProperties().
+    passCommandToAction().
+    option('-a, --action <string>' ,'code/decode', parseAction).
     option('-s, --shift <number>', 'шаг кодироания',parseShift).
     option('-i, --input <path>',  'input', parseInput).
     option('-o, --output <path>', 'output', parseOutput)
 
 command.parse(process.argv);
 
-if(!command.shift || !command.act) {
+if(!command.shift || !command.action) {
     process.stderr.write(chalk.red("missing paramrters"))
     process.exit(-1)
-}
+}``
 
 let t = new myTrans({
     shift: command.shift,
-    action: command.act,
+    action: command.action,
 })
 
 const input = command.input ?
